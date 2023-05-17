@@ -2,12 +2,14 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google"
 import { signIn, signOut } from "next-auth/react";
 
+
+
 const handler = NextAuth({
 
     providers : [
         GoogleProvider({
-            clientId: '',
-            clientSecret : "",
+            clientId: process.env.GOOGLE_ID,
+            clientSecret : process.env.GOOGLE_CLIENT_SECRET,
         })
 
     ],
